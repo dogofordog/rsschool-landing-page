@@ -26,3 +26,5 @@ buttons.forEach((btn) => {
     applyTheme(theme);
   });
 });
+
+document.documentElement.scrollWidth === document.documentElement.clientWidth
