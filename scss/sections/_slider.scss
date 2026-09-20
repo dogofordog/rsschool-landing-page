@@ -1,0 +1,267 @@
+/* ===== База (Mobile 380) ===== */
+.favorite {
+  padding: 100px 16px;
+}
+
+.favorite__title {
+  margin: 0 0 40px;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.favorite__title em {
+  font-style: italic;
+  color: var(--text-accent);
+}
+
+.slider {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.slider__list {
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.slider__list::-webkit-scrollbar {
+  display: none;
+}
+
+.slider__slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  text-align: center;
+}
+
+.slide__img {
+  width: 348px;
+  height: 348px;
+  object-fit: contain;
+}
+
+.slide__title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text-primary);
+}
+
+.slide__text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.slide__price {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text-primary);
+}
+
+.slider__arrow {
+  display: none;
+}
+
+.slider__controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.slider__dot {
+  width: 40px;
+  height: 4px;
+  padding: 0;
+  border: none;
+  border-radius: 2px;
+  background-color: var(--border-primary);
+  cursor: pointer;
+  transition: background-color .2s ease;
+}
+
+.slider__dot.is-active {
+  background-color: var(--text-primary);
+}
+
+@media (min-width: 768px) {@media (min-width: 768px) {
+  .favorite {
+    padding: 100px 40px;
+  }
+
+  .favorite__title {
+    font-size: 60px;
+  }
+
+  .slider {
+    padding: 0 100px;
+  }
+
+  .slider__list {
+    width: 348px;
+    overflow: hidden;
+  }
+
+  .slider__slide {
+    gap: 40px;
+    flex: 0 0 348px;
+  }
+
+  .slider__arrow {
+    position: absolute;
+    top: 174px;                
+    transform: translateY(-50%);
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 60px;
+    height: 60px;
+    padding: 0;
+
+    border-radius: 100px;
+    border: 1px solid var(--border-inverse);
+    background: transparent;
+    color: var(--text-primary);
+    cursor: pointer;
+
+    transition: background-color .2s ease, color .2s ease;
+  }
+
+  .slider__arrow--prev {
+    left: 0;
+  }
+
+  .slider__arrow--next {
+    right: 0;
+  }
+
+  .slider__arrow:hover {
+    background-color: var(--text-primary);
+    color: var(--bg-page);
+  }
+
+  .slider__arrow svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .slider__controls {
+    margin-top: 40px;
+  }
+}
+  .favorite {
+    padding: 100px 40px;
+  }
+
+  .favorite__title {
+    font-size: 60px;
+  }
+
+  .slider {
+    padding: 0 100px;
+  }
+
+  .slider__slide {
+    gap: 40px;
+    flex: 0 0 348px;
+  }
+
+  .slider__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 60px;
+    height: 60px;
+    padding: 0;
+
+    border-radius: 100px;
+    border: 1px solid var(--border-inverse);
+    background: transparent;
+    color: var(--text-primary);
+    cursor: pointer;
+
+    transition: background-color .2s ease, color .2s ease;
+  }
+
+  .slider__arrow--prev {
+    left: 0;
+  }
+
+  .slider__arrow--next {
+    right: 0;
+  }
+
+  .slider__arrow:hover {
+    background-color: var(--text-primary);
+    color: var(--bg-page);
+  }
+
+  .slider__arrow svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .slider__controls {
+    margin-top: 40px;
+  }
+}
+@media (min-width: 1440px) {
+  .favorite {
+    padding: 100px 40px;
+  }
+
+  .favorite__title {
+    font-size: 60px;
+  }
+
+  .slider {
+    padding: 0;
+  }
+
+  .slider__list {
+    width: 480px;
+  }
+
+  .slider__slide {
+    flex: 0 0 480px;
+    gap: 40px;
+  }
+
+  .slide__img {
+    width: 480px;
+    height: 480px;
+  }
+
+  .slider__arrow {
+    top: 240px;
+  }
+}
