@@ -10,6 +10,8 @@
   padding: 60px 16px;
   border-radius: var(--radius-card);
   background-color: var(--bg-container);
+  max-width: 1360px;
+  margin: 0 auto;
 }
 
 .footer__offer {
@@ -23,8 +25,8 @@
   font-size: 32px;
   font-weight: 600;
   line-height: 1.25;
-  color: var(--text-inverse);
   text-align: left;
+  color: var(--text-inverse);
 }
 
 .footer__title em {
@@ -55,7 +57,6 @@
 .footer__social:hover {
   background-color: var(--text-inverse);
   color: var(--bg-container);
-  border-color: var(--text-inverse);
 }
 
 .footer__contacts {
@@ -102,14 +103,13 @@ a.footer__contact:hover {
   width: 20px;
   height: 20px;
 }
+
 @media (min-width: 768px) {
   .footer {
     padding: 100px 40px;
   }
 
   .footer__inner {
-    max-width: 1360px;
-    margin: 0 auto;
     padding: 100px 60px;
     gap: 100px;
   }
@@ -119,6 +119,7 @@ a.footer__contact:hover {
     line-height: 1.05;
   }
 }
+
 @media (min-width: 1440px) {
   .footer__inner {
     flex-direction: row;
