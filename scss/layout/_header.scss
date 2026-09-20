@@ -1,0 +1,159 @@
+.header {
+  padding-block: 16px;
+  background-color: var(--bg-page);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.header__logo img {
+  width: 80px;
+  height: auto;
+}
+.header__logo-light {
+  display: block;
+}
+
+.header__logo-dark {
+  display: none;
+}
+
+[data-theme="dark"] {
+  .header__logo-light {
+    display: none;
+  }
+
+  .header__logo-dark {
+    display: block;
+  }
+}
+
+.nav {
+  display: none;
+}
+
+.nav__link {
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+.nav__link:hover {
+  text-decoration: underline;
+}
+
+.header__menu-link {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: color .2s ease;
+}
+
+.header__menu-link:hover {
+  text-decoration: underline;
+}
+
+.header__controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.theme-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px;
+  border-radius: 999px;
+  border: 1px solid var(--border-primary);
+  cursor: pointer;
+}
+
+.theme-switch__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.theme-switch__btn.is-active {
+  background-color: var(--text-accent);
+  color: var(--text-inverse);
+}
+
+.theme-switch__btn:hover:not(.is-active) {
+  background-color: var(--bg-container);
+  color: var(--text-inverse);
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+
+  width: 44px;
+  height: 44px;
+  padding: 0;
+
+  border-radius: 100px;
+  border: 1px solid var(--border-inverse);
+  background: transparent;
+  cursor: pointer;
+
+  transition: border-color .2s ease;
+}
+
+.burger:hover {
+  border-color: var(--text-primary);
+}
+
+.burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--text-primary);
+  border-radius: 2px;
+  transition: transform .3s ease, opacity .3s ease;
+}
+@media (min-width: 1440px) {
+  .header {
+    padding: 0 40px;
+  }
+
+  .nav {
+    display: block;
+  }
+
+  .nav__list {
+    display: flex;
+    gap: 24px;
+  }
+
+  .nav__link {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .header__menu-link {
+    display: flex;
+  }
+
+  .burger {
+    display: none;
+  }
+}

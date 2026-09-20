@@ -1,5 +1,18 @@
+
+// Base
 @use 'base/reset';
 @use 'base/tokens';
 @use 'base/typography';
+
+// Layout
 @use 'layout/container';
 @use 'layout/header';
+@use 'layout/footer';
+
+// Components
+@use 'components/button';
+@use 'components/theme-switch';
+
+// Sections
+@use 'sections/hero';
+@use 'sections/slider';
