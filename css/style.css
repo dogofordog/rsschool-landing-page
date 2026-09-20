@@ -683,7 +683,7 @@ a.footer__contact:hover {
 .about__inner {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   gap: 40px;
   padding: 0 16px;
 }
@@ -746,6 +746,11 @@ a.footer__contact:hover {
   }
 }
 @media (min-width: 1440px) {
+  .about__inner {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0;
+  }
   .about__img--mobile-hidden {
     display: block;
   }
@@ -754,11 +759,12 @@ a.footer__contact:hover {
     align-items: flex-start;
     justify-content: center;
     gap: 40px;
-    max-width: 1360px;
-    margin: 0 auto;
   }
   .about__column {
     flex: 1;
+  }
+  .about__title {
+    text-align: left;
   }
 }
 .app {
