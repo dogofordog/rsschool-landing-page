@@ -1,0 +1,24 @@
+:root {
+  --text-primary: #403F3D;
+  --text-inverse: #E1D4C9;
+  --text-accent: #B0907A;
+  --border-primary: #C1B6AD;
+  --border-inverse: #665F55;
+  --bg-page: #E1D4C9;
+  --bg-container: #665F55;
+  --bg-overlay: rgba(64, 63, 61, .8);
+
+  --container-max: 1440px;
+  --section-gap: 100px;
+  --radius-card: 40px;
+}
+
+[data-theme="dark"] {
+  --text-primary: #E1D4C9;
+  --text-inverse: #E1D4C9;
+  --text-accent: #B0907A;
+  --border-primary: #665F55;
+  --border-inverse: #C1B6AD;
+  --bg-page: #292826;
+  --bg-container: #403F3D;
+}
