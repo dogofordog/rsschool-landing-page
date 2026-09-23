@@ -406,10 +406,19 @@ a.footer__contact:hover {
   align-self: stretch;
   padding: 60px 16px;
   border-radius: var(--radius-card);
-  background: url("../assets/img/img-hero.jpg") var(--bg-page) 50%/cover no-repeat;
+  background: var(--bg-page);
   position: relative;
   overflow: hidden;
   min-height: 400px;
+}
+
+.hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .hero__card::before {
