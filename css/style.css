@@ -68,6 +68,12 @@ body {
   line-height: 1.5;
   color: var(--text-primary);
   background-color: var(--bg-page);
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  min-height: 100vh;
+  padding-top: 20px;
+  padding-bottom: 40px;
 }
 
 h1 {
@@ -106,9 +112,16 @@ h2 {
   padding-inline: 20px;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
 .header {
-  padding-block: 16px;
-  background-color: var(--bg-page);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .header__inner {
@@ -234,10 +247,7 @@ h2 {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-@media (min-width: 1440px) {
-  .header {
-    padding: 0 40px;
-  }
+@media (min-width: 1439px) {
   .nav {
     display: block;
   }
@@ -249,15 +259,15 @@ h2 {
     font-size: 16px;
     font-weight: 600;
   }
-  .header__menu-link {
-    display: flex;
-  }
   .burger {
     display: none;
   }
+  .header__menu-link {
+    display: flex;
+  }
 }
 .footer {
-  padding: 100px 16px;
+  padding: 0 16px;
   background-color: var(--bg-page);
 }
 
@@ -527,7 +537,7 @@ a.footer__contact:hover {
   }
 }
 .favorite {
-  padding: 100px 16px;
+  padding: 0 16px;
 }
 
 .favorite__title {
@@ -547,7 +557,7 @@ a.footer__contact:hover {
 .slider {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 40px;
 }
 
@@ -632,7 +642,7 @@ a.footer__contact:hover {
 
 @media (min-width: 768px) {
   .favorite {
-    padding: 100px 40px;
+    padding: 0 16px;
   }
   .favorite__title {
     font-size: 60px;
@@ -656,6 +666,7 @@ a.footer__contact:hover {
     width: 60px;
     height: 60px;
     padding: 0;
+    margin-top: 144px;
     border-radius: 100px;
     border: 1px solid var(--border-inverse);
     background: transparent;
@@ -683,9 +694,12 @@ a.footer__contact:hover {
     width: 480px;
     height: 480px;
   }
+  .slider__arrow {
+    margin-top: 210px;
+  }
 }
 .about {
-  padding: 100px 0;
+  padding: 0;
 }
 
 .about__inner {
@@ -776,7 +790,7 @@ a.footer__contact:hover {
   }
 }
 .app {
-  padding: 100px 16px;
+  padding: 0 16px;
 }
 
 .app__inner {
@@ -870,7 +884,7 @@ a.footer__contact:hover {
 
 @media (min-width: 768px) {
   .app {
-    padding: 100px 40px;
+    padding: 0 40px;
   }
   .app__buttons {
     flex-direction: row;
@@ -880,8 +894,6 @@ a.footer__contact:hover {
   }
   .app__title {
     text-align: left;
-  }
-  .app__title {
     font-size: 60px;
   }
 }
@@ -904,7 +916,7 @@ a.footer__contact:hover {
   }
 }
 .menu {
-  padding: 100px 0;
+  padding: 0;
 }
 
 .menu__inner {

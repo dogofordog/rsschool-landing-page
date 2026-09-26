@@ -4,6 +4,12 @@ body {
   line-height: 1.5;
   color: var(--text-primary);
   background-color: var(--bg-page);
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  min-height: 100vh;
+  padding-top: 20px;
+  padding-bottom: 40px;
 }
 
 h1 {

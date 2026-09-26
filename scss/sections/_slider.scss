@@ -1,5 +1,5 @@
 .favorite {
-  padding: 100px 16px;
+  padding: 0 16px;
 }
 
 .favorite__title {
@@ -19,7 +19,7 @@
 .slider {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 40px;
 }
 
@@ -104,7 +104,7 @@
 
 @media (min-width: 768px) {
   .favorite {
-    padding: 100px 40px;
+    padding: 0 16px;
   }
 
   .favorite__title {
@@ -134,7 +134,7 @@
     width: 60px;
     height: 60px;
     padding: 0;
-
+margin-top: 144px;
     border-radius: 100px;
     border: 1px solid var(--border-inverse);
     background: transparent;
@@ -167,5 +167,8 @@
   .slide__img {
     width: 480px;
     height: 480px;
+  }
+  .slider__arrow {
+    margin-top: 210px;       
   }
 }

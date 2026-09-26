@@ -1,5 +1,5 @@
 .app {
-  padding: 100px 16px;
+  padding: 0 16px;
 }
 
 .app__inner {
@@ -90,22 +90,18 @@
   width: 348px;
   height: auto;
 }
-
 @media (min-width: 768px) {
   .app {
-    padding: 100px 40px;
+    padding: 0 40px;     
   }
-  .app__buttons{
+  .app__buttons {
     flex-direction: row;
   }
   .app__img {
-  width: 630px;
-}
-.app__title{
-   text-align: left;
-}
-
+    width: 630px;
+  }
   .app__title {
+    text-align: left;
     font-size: 60px;
   }
 }
