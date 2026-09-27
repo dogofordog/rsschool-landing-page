@@ -82,8 +82,8 @@
 
   <main>
     <section class="menu" id="menu">
-       <div class="menu__inner">                                           
-      <h1 class="menu__title">                                           
+       <div class="menu__inner">
+      <h1 class="menu__title">
         Behind each of our cups hides an <em>amazing surprise</em>
       </h1>
      <div class="menu__tabs">
@@ -221,7 +221,24 @@
     </div>
   </div>
 </div>
-  <script src="js/theme.js"></script>
+<div class="mobile-menu" id="mobile-menu" hidden>
+  <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+    <ul class="mobile-menu__list">
+      <li><a href="index.html#favorite" class="mobile-menu__link">Favorite coffee</a></li>
+      <li><a href="index.html#about" class="mobile-menu__link">About</a></li>
+      <li><a href="index.html#app" class="mobile-menu__link">Mobile app</a></li>
+      <li><a href="#contacts" class="mobile-menu__link">Contact us</a></li>
+    </ul>
+
+    <a href="catalog.html" class="mobile-menu__menu-link">
+      <span>Menu</span>
+      <img src="assets/icons/coffee-cup.svg" alt="" width="40" height="40">
+    </a>
+  </nav>
+</div>
+
+<script src="js/theme.js"></script>
+<script src="js/burger.js"></script>
   <template id="card-template">
   <li class="card">
     <img class="card__img" src="" alt="" width="310" height="310">

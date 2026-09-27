@@ -34,9 +34,6 @@ const modalCloseEls = modal.querySelectorAll('[data-modal-close]');
 const IMG_PATH = 'assets/img/';
 const INITIAL_MOBILE_COUNT = 4;
 
-// ============================================================
-// Загрузка данных
-// ============================================================
 async function loadProducts() {
   const response = await fetch('js/products.json');
   if (!response.ok) {
@@ -44,10 +41,6 @@ async function loadProducts() {
   }
   return response.json();
 }
-
-// ============================================================
-// Создание карточки
-// ============================================================
 function createCard(product) {
   const fragment = cardTemplate.content.cloneNode(true);
   const card = fragment.querySelector('.card');
@@ -86,9 +79,6 @@ function renderCards() {
   moreButton.hidden = !hasMore;
 }
 
-// ============================================================
-// Категории
-// ============================================================
 function setupTabs() {
   tabs.forEach((tab) => {
     tab.addEventListener('click', () => {
@@ -102,9 +92,6 @@ function setupTabs() {
   });
 }
 
-// ============================================================
-// Show more
-// ============================================================
 function setupMoreButton() {
   moreButton.addEventListener('click', () => {
     state.showAll = true;
@@ -112,9 +99,6 @@ function setupMoreButton() {
   });
 }
 
-// ============================================================
-// Реакция на resize
-// ============================================================
 function setupResize() {
   window.addEventListener('resize', () => {
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
@@ -123,21 +107,14 @@ function setupResize() {
   });
 }
 
-// ============================================================
-// МОДАЛЬНОЕ ОКНО
-// ============================================================
-
-// Открывает модалку для товара по имени
 function openModal(productName) {
   const product = state.products.find((p) => p.name === productName);
   if (!product) return;
 
-  // Сбрасываем состояние модалки: размер — первый, добавки — пусто
   state.modal.product = product;
   state.modal.sizeKey = 's';
   state.modal.additives = [];
 
-  // Заполняем базовую информацию
   modalImage.src = IMG_PATH + product.image;
   modalImage.alt = product.name;
   modalTitle.textContent = product.name;
@@ -148,22 +125,19 @@ function openModal(productName) {
   updateTotal();
 
   modal.hidden = false;
-  document.body.style.overflow = 'hidden'; // блокируем скролл страницы
+  document.body.style.overflow = 'hidden'; 
 }
 
-// Закрывает модалку
 function closeModal() {
   modal.hidden = true;
   state.modal.product = null;
-  document.body.style.overflow = ''; // возвращаем скролл
+  document.body.style.overflow = ''; 
 }
 
-// Рендерит кнопки размеров
 function renderSizes() {
   const product = state.modal.product;
   modalSizesBox.innerHTML = '';
 
-  // Object.entries перебирает ключи и значения объекта sizes
   Object.entries(product.sizes).forEach(([key, data]) => {
     const button = document.createElement('button');
     button.type = 'button';
@@ -178,7 +152,6 @@ function renderSizes() {
 
     button.addEventListener('click', () => {
       state.modal.sizeKey = key;
-      // Переключаем активный класс
       modalSizesBox.querySelectorAll('.modal__option').forEach((b) => {
         b.classList.toggle('is-active', b.dataset.sizeKey === key);
       });
@@ -189,7 +162,6 @@ function renderSizes() {
   });
 }
 
-// Рендерит кнопки добавок
 function renderAdditives() {
   const product = state.modal.product;
   modalAdditivesBox.innerHTML = '';
@@ -206,7 +178,6 @@ function renderAdditives() {
     `;
 
     button.addEventListener('click', () => {
-      // toggle: если уже есть в массиве — убираем, если нет — добавляем
       const idx = state.modal.additives.indexOf(index);
       if (idx === -1) {
         state.modal.additives.push(index);
@@ -222,57 +193,44 @@ function renderAdditives() {
   });
 }
 
-// Пересчитывает и обновляет итоговую цену
 function updateTotal() {
   const product = state.modal.product;
   if (!product) return;
-
-  // parseFloat превращает "7.00" в 7, "0.50" в 0.5
   let total = parseFloat(product.price);
 
-  // Прибавляем add-price выбранного размера
   const sizeData = product.sizes[state.modal.sizeKey];
   total += parseFloat(sizeData['add-price']);
 
-  // Прибавляем add-price каждой выбранной добавки
   state.modal.additives.forEach((index) => {
     total += parseFloat(product.additives[index]['add-price']);
   });
 
-  // toFixed(2) округляет до двух знаков: 7.5 → "7.50"
   modalTotal.textContent = '$' + total.toFixed(2);
 }
 
-// Подписываемся на клики: открытие (по карточке) и закрытие (по overlay/кнопке)
 function setupModal() {
-  // Делегирование: клик по grid ловит клики по карточкам
-  grid.addEventListener('click', (event) => {
+    grid.addEventListener('click', (event) => {
     const card = event.target.closest('.card');
     if (!card) return;
     openModal(card.dataset.name);
   });
 
-  // Все элементы с data-modal-close закрывают модалку
   modalCloseEls.forEach((el) => {
     el.addEventListener('click', closeModal);
   });
 
-  // Escape закрывает
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && !modal.hidden) {
       closeModal();
     }
   });
 
-  // Клик внутри .modal__window НЕ должен закрывать (event.target будет .modal__window или его дети)
+
   modal.querySelector('.modal__window').addEventListener('click', (event) => {
     event.stopPropagation();
   });
 }
 
-// ============================================================
-// Точка входа
-// ============================================================
 async function init() {
   try {
     state.products = await loadProducts();
