@@ -1,0 +1,141 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  padding: 0px 16px;
+}
+
+.hero__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  align-self: stretch;
+  padding: 60px 16px;
+  border-radius: var(--radius-card);
+  background: var(--bg-page);
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+}
+
+.hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero__card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(64, 63, 61, 0.2);
+  z-index: 0;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  align-self: stretch;
+  flex-shrink: 0;
+}
+
+.hero__title,
+.hero__text,
+.hero__button {
+  flex-shrink: 0;
+}
+
+.hero__title {
+  font-size: 42px;
+  line-height: 1.15;
+  font-weight: 600;
+  color: var(--text-inverse);
+  margin: 0;
+  align-self: stretch;
+}
+
+.hero__title em {
+  font-style: italic;
+  color: var(--text-accent);
+}
+
+.hero__text {
+  color: var(--text-inverse);
+  margin: 0;
+  align-self: stretch;
+}
+
+.hero__button {
+  display: flex;
+  width: 200px;
+  padding: 14px 0;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 100px;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.hero__button svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  flex-shrink: 0;
+}
+
+.hero__button:hover {
+  transform: scale(1.05);
+  background: var(--bg-container);
+  color: var(--text-inverse);
+}
+
+@media (min-width: 768px) {
+  .hero__card {
+    padding: 0 40px;
+    min-height: 644px;
+  }
+
+  .hero__content {
+    width: 530px;
+  }
+
+  .hero__title {
+    font-size: 72px;
+    line-height: 1.05;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero {
+    padding: 0 40px;
+  }
+
+  .hero__card {
+    max-width: 1360px;
+    padding: 100px;
+    min-height: 600px;
+  }
+
+  .hero__title {
+    font-size: 72px;
+    line-height: 1.05;
+  }
+}
