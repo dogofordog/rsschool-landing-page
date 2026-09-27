@@ -81,7 +81,7 @@
   padding: 14px 0;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 0;
   border-radius: 100px;
   background: var(--bg-page);
   color: var(--text-primary);
@@ -95,16 +95,23 @@
 }
 
 .hero__button svg {
-  width: 20px;
+  width: 0;                               
   height: 20px;
   stroke: currentColor;
   flex-shrink: 0;
+  opacity: 0;                            
+  overflow: hidden;
+  transition: width 0.3s ease, margin-left 0.3s ease, opacity 0.3s ease;
 }
-
 .hero__button:hover {
   transform: scale(1.05);
   background: var(--bg-container);
   color: var(--text-inverse);
+}
+.hero__button:hover svg {
+  width: 20px;                             
+  margin-left: 8px;                      
+  opacity:1;
 }
 
 @media (min-width: 768px) {

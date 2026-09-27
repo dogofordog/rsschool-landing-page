@@ -809,7 +809,7 @@ a.footer__contact:hover {
   padding: 14px 0;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 0;
   border-radius: 100px;
   background: var(--bg-page);
   color: var(--text-primary);
@@ -823,16 +823,25 @@ a.footer__contact:hover {
 }
 
 .hero__button svg {
-  width: 20px;
+  width: 0;
   height: 20px;
   stroke: currentColor;
   flex-shrink: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: width 0.3s ease, margin-left 0.3s ease, opacity 0.3s ease;
 }
 
 .hero__button:hover {
   transform: scale(1.05);
   background: var(--bg-container);
   color: var(--text-inverse);
+}
+
+.hero__button:hover svg {
+  width: 20px;
+  margin-left: 8px;
+  opacity: 1;
 }
 
 @media (min-width: 768px) {
@@ -887,15 +896,20 @@ a.footer__contact:hover {
   gap: 40px;
 }
 
+.slider__viewport {
+  overflow: hidden;
+  flex: 1;
+  max-width: 348px;
+}
+
 .slider__list {
   display: flex;
   gap: 40px;
   margin: 0;
   padding: 0;
   list-style: none;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
+  transition: transform 0.4s ease;
+  will-change: transform;
 }
 
 .slider__list::-webkit-scrollbar {
@@ -908,7 +922,6 @@ a.footer__contact:hover {
   align-items: center;
   gap: 20px;
   flex: 0 0 100%;
-  scroll-snap-align: center;
   text-align: center;
 }
 
@@ -976,12 +989,7 @@ a.footer__contact:hover {
   .slider {
     padding: 0;
   }
-  .slider__list {
-    width: 348px;
-    overflow: hidden;
-  }
   .slider__slide {
-    flex: 0 0 348px;
     gap: 40px;
   }
   .slider__arrow {
@@ -1010,12 +1018,6 @@ a.footer__contact:hover {
   }
 }
 @media (min-width: 1440px) {
-  .slider__list {
-    width: 480px;
-  }
-  .slider__slide {
-    flex: 0 0 480px;
-  }
   .slide__img {
     width: 480px;
     height: 480px;
