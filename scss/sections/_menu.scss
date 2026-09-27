@@ -94,10 +94,6 @@
   transition: border-color .2s ease;
 }
 
-.card:hover {
-  border-color: var(--text-primary);
-}
-
 .card--hidden {
   display: none;
 }
