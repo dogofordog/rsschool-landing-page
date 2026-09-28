@@ -16,6 +16,9 @@
   transform: none;
   transition: opacity .3s ease, transform .3s ease, visibility 0s;
 }
+[data-theme="dark"] .mobile-menu__menu-link img {
+  filter: invert(1);
+}
 
 @media (min-width: 769px) {
   .mobile-menu {
