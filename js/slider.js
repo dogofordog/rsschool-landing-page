@@ -33,7 +33,18 @@ if (slider) {
   dots.forEach((dot, i) => {
     dot.addEventListener('click', () => goToSlide(i));
   });
+const viewport = slider.querySelector('.slider__viewport');
+let startX = 0;
 
+viewport.addEventListener('touchstart', (e) => {
+  startX = e.touches[0].clientX;
+}, { passive: true });
+
+viewport.addEventListener('touchend', (e) => {
+  const diff = e.changedTouches[0].clientX - startX;
+  if (Math.abs(diff) < 50) return;
+  goToSlide(diff < 0 ? currentIndex + 1 : currentIndex - 1);
+});
   window.addEventListener('resize', () => {
     goToSlide(currentIndex);
   });

@@ -91,6 +91,7 @@
 }
 
 .slider__dot {
+  position: relative;
   width: 40px;
   height: 4px;
   padding: 0;
@@ -99,6 +100,16 @@
   background-color: var(--border-primary);
   cursor: pointer;
   transition: background-color .2s ease;
+}
+
+.slider__dot::after {
+  content: '';
+  position: absolute;
+  inset: -12px 0;
+}
+
+.slider__dot.is-active {
+  background-color: var(--text-primary);
 }
 
 .slider__dot.is-active {
@@ -153,6 +164,9 @@ margin-top: 144px;
 }
 
 @media (min-width: 1440px) {
+  .slider__viewport {
+    max-width: 480px;
+  }
   .slide__img {
     width: 480px;
     height: 480px;

@@ -1,22 +1,14 @@
-// js/catalog.js
-
-// ============================================================
-// Состояние приложения
-// ============================================================
 const state = {
   products: [],
   activeCategory: 'coffee',
   showAll: false,
   modal: {
-    product: null,       // открытый товар
-    sizeKey: 's',        // активный размер
-    additives: [],       // массив индексов выбранных добавок
+    product: null,
+    sizeKey: 's',
+    additives: [],
   },
 };
 
-// ============================================================
-// DOM-элементы
-// ============================================================
 const grid = document.querySelector('.menu__grid');
 const tabs = document.querySelectorAll('.menu__tab');
 const moreButton = document.querySelector('.menu__more');
@@ -33,6 +25,7 @@ const modalCloseEls = modal.querySelectorAll('[data-modal-close]');
 
 const IMG_PATH = 'assets/img/';
 const INITIAL_MOBILE_COUNT = 4;
+const mobileQuery = window.matchMedia('(max-width: 768px)');
 
 async function loadProducts() {
   const response = await fetch('js/products.json');
@@ -41,6 +34,7 @@ async function loadProducts() {
   }
   return response.json();
 }
+
 function createCard(product) {
   const fragment = cardTemplate.content.cloneNode(true);
   const card = fragment.querySelector('.card');
@@ -55,18 +49,13 @@ function createCard(product) {
   return fragment;
 }
 
-// ============================================================
-// Рендер карточек
-// ============================================================
 function renderCards() {
   const filtered = state.products.filter(
     (product) => product.category === state.activeCategory
   );
 
-  const isMobile = window.matchMedia('(max-width: 768px)').matches;
-
   let visible = filtered;
-  if (isMobile && !state.showAll && filtered.length > INITIAL_MOBILE_COUNT) {
+  if (mobileQuery.matches && !state.showAll && filtered.length > INITIAL_MOBILE_COUNT) {
     visible = filtered.slice(0, INITIAL_MOBILE_COUNT);
   }
 
@@ -75,7 +64,7 @@ function renderCards() {
   visible.forEach((product) => fragment.appendChild(createCard(product)));
   grid.appendChild(fragment);
 
-  const hasMore = isMobile && !state.showAll && filtered.length > INITIAL_MOBILE_COUNT;
+  const hasMore = mobileQuery.matches && !state.showAll && filtered.length > INITIAL_MOBILE_COUNT;
   moreButton.hidden = !hasMore;
 }
 
@@ -100,9 +89,8 @@ function setupMoreButton() {
 }
 
 function setupResize() {
-  window.addEventListener('resize', () => {
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
-    if (!isMobile) state.showAll = false;
+  mobileQuery.addEventListener('change', () => {
+    state.showAll = false;
     renderCards();
   });
 }
@@ -125,13 +113,13 @@ function openModal(productName) {
   updateTotal();
 
   modal.hidden = false;
-  document.body.style.overflow = 'hidden'; 
+  document.body.style.overflow = 'hidden';
 }
 
 function closeModal() {
   modal.hidden = true;
   state.modal.product = null;
-  document.body.style.overflow = ''; 
+  document.body.style.overflow = '';
 }
 
 function renderSizes() {
@@ -209,7 +197,7 @@ function updateTotal() {
 }
 
 function setupModal() {
-    grid.addEventListener('click', (event) => {
+  grid.addEventListener('click', (event) => {
     const card = event.target.closest('.card');
     if (!card) return;
     openModal(card.dataset.name);
@@ -224,7 +212,6 @@ function setupModal() {
       closeModal();
     }
   });
-
 
   modal.querySelector('.modal__window').addEventListener('click', (event) => {
     event.stopPropagation();

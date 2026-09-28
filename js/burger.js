@@ -10,7 +10,7 @@ function openMenu() {
   isMenuOpen = true;
   burgerButton.setAttribute('aria-expanded', 'true');
   burgerButton.classList.add('is-open');
-  mobileMenu.hidden = false;
+  mobileMenu.classList.add('is-open');
   document.body.style.overflow = 'hidden';
 }
 
@@ -18,7 +18,7 @@ function closeMenu() {
   isMenuOpen = false;
   burgerButton.setAttribute('aria-expanded', 'false');
   burgerButton.classList.remove('is-open');
-  mobileMenu.hidden = true;
+  mobileMenu.classList.remove('is-open');
   document.body.style.overflow = '';
 }
 
