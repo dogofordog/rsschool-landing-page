@@ -181,74 +181,77 @@
 
     </div>
   </footer>
-<div class="modal" id="modal" hidden>
-  <div class="modal__overlay" data-modal-close></div>
 
-  <div class="modal__window" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal__image-wrap">
-      <img class="modal__image" src="" alt="">
+  <div class="modal" id="modal" hidden>
+    <div class="modal__overlay" data-modal-close></div>
+
+    <div class="modal__window" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal__image-wrap">
+        <img class="modal__image" src="data:," alt="">
+      </div>
+
+      <div class="modal__content">
+        <div class="modal__header">
+          <h2 class="modal__title" id="modal-title">Coffee</h2>
+          <p class="modal__description"></p>
+        </div>
+
+        <div class="modal__group">
+          <h3 class="modal__group-title">Size</h3>
+          <div class="modal__options" data-modal-sizes></div>
+        </div>
+
+        <div class="modal__group">
+          <h3 class="modal__group-title">Additives</h3>
+          <div class="modal__options" data-modal-additives></div>
+        </div>
+
+        <div class="modal__total">
+          <span class="modal__total-label">Total:</span>
+          <span class="modal__total-value" data-modal-total></span>
+        </div>
+
+        <p class="modal__note">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/>
+            <path d="M8 7V11M8 5V5.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+          <span>The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.</span>
+        </p>
+
+        <button type="button" class="modal__close-btn" data-modal-close>Close</button>
+      </div>
     </div>
-
-  <div class="modal__content">
-  <div class="modal__header">
-    <h2 class="modal__title" id="modal-title"></h2>
-    <p class="modal__description"></p>
   </div>
-      <div class="modal__group">
-        <h3 class="modal__group-title">Size</h3>
-        <div class="modal__options" data-modal-sizes></div>
-      </div>
 
-      <div class="modal__group">
-        <h3 class="modal__group-title">Additives</h3>
-        <div class="modal__options" data-modal-additives></div>
-      </div>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+      <ul class="mobile-menu__list">
+        <li><a href="index.html#favorite" class="mobile-menu__link">Favorite coffee</a></li>
+        <li><a href="index.html#about" class="mobile-menu__link">About</a></li>
+        <li><a href="index.html#app" class="mobile-menu__link">Mobile app</a></li>
+        <li><a href="#contacts" class="mobile-menu__link">Contact us</a></li>
+      </ul>
 
-      <div class="modal__total">
-        <span class="modal__total-label">Total:</span>
-        <span class="modal__total-value" data-modal-total></span>
-      </div>
-
-      <p class="modal__note">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/>
-          <path d="M8 7V11M8 5V5.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-        </svg>
-        <span>The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.</span>
-      </p>
-
-      <button type="button" class="modal__close-btn" data-modal-close>Close</button>
-    </div>
+      <a href="catalog.html" class="mobile-menu__menu-link">
+        <span>Menu</span>
+        <img src="assets/icons/coffee-cup.svg" alt="" width="40" height="40">
+      </a>
+    </nav>
   </div>
-</div>
-<div class="mobile-menu" id="mobile-menu" hidden>
-  <nav class="mobile-menu__nav" aria-label="Mobile navigation">
-    <ul class="mobile-menu__list">
-      <li><a href="index.html#favorite" class="mobile-menu__link">Favorite coffee</a></li>
-      <li><a href="index.html#about" class="mobile-menu__link">About</a></li>
-      <li><a href="index.html#app" class="mobile-menu__link">Mobile app</a></li>
-      <li><a href="#contacts" class="mobile-menu__link">Contact us</a></li>
-    </ul>
 
-    <a href="catalog.html" class="mobile-menu__menu-link">
-      <span>Menu</span>
-      <img src="assets/icons/coffee-cup.svg" alt="" width="40" height="40">
-    </a>
-  </nav>
-</div>
-
-<script src="js/theme.js"></script>
-<script src="js/burger.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/burger.js"></script>
   <template id="card-template">
-  <li class="card">
-    <img class="card__img" src="" alt="" width="310" height="310">
-    <div class="card__body">
-      <h2 class="card__title"></h2>
-      <p class="card__text"></p>
-      <p class="card__price"></p>
-    </div>
-  </li>
-</template>
-<script src="js/catalog.js"></script>
+    <li class="card">
+      <img class="card__img" src="" alt="" width="310" height="310">
+      <div class="card__body">
+        <h2 class="card__title"></h2>
+        <p class="card__text"></p>
+        <p class="card__price"></p>
+      </div>
+    </li>
+  </template>
+  <script src="js/catalog.js"></script>
 </body>
 </html>
