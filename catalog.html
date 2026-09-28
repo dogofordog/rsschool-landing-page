@@ -82,107 +82,34 @@
 
   <main>
     <section class="menu" id="menu">
-      <div class="menu__inner">
-        <h1 class="menu__title">
-          Behind each of our cups hides an <em>amazing surprise</em>
-        </h1>
+       <div class="menu__inner">
+      <h1 class="menu__title">
+        Behind each of our cups hides an <em>amazing surprise</em>
+      </h1>
+     <div class="menu__tabs">
+  <button type="button" class="menu__tab is-active" data-category="coffee">
+    <span class="menu__tab-icon">
+      <img src="assets/icons/coffe-icon.png" alt="" width="16" height="16">
+    </span>
+    <span>Coffee</span>
+  </button>
+  <button type="button" class="menu__tab" data-category="tea">
+    <span class="menu__tab-icon">
+      <img src="assets/icons/tea-icon.png" alt="" width="16" height="16">
+    </span>
+    <span>Tea</span>
+  </button>
+  <button type="button" class="menu__tab" data-category="dessert">
+    <span class="menu__tab-icon">
+      <img src="assets/icons/desert-icon.png" alt="" width="16" height="16">
+    </span>
+    <span>Dessert</span>
+  </button>
+</div>
 
-        <div class="menu__tabs">
-          <button type="button" class="menu__tab is-active">
-            <span class="menu__tab-icon">
-              <img src="assets/icons/coffe-icon.png" alt="" width="16" height="16">
-            </span>
-            <span>Coffee</span>
-          </button>
-          <button type="button" class="menu__tab">
-            <span class="menu__tab-icon">
-              <img src="assets/icons/tea-icon.png" alt="" width="16" height="16">
-            </span>
-            <span>Tea</span>
-          </button>
-          <button type="button" class="menu__tab">
-            <span class="menu__tab-icon">
-              <img src="assets/icons/desert-icon.png" alt="" width="16" height="16">
-            </span>
-            <span>Dessert</span>
-          </button>
-        </div>
+       <ul class="menu__grid"></ul>
 
-        <ul class="menu__grid">
-          <li class="card">
-            <img class="card__img" src="assets/img/coffee-1.jpg" alt="Irish coffee" width="310" height="310">
-            <div class="card__body">
-              <h2 class="card__title">Irish coffee</h2>
-              <p class="card__text">Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
-              <p class="card__price">$7.00</p>
-            </div>
-          </li>
-
-          <li class="card">
-            <img class="card__img" src="assets/img/coffee-2.jpg" alt="Kahlua coffee" width="310" height="310">
-            <div class="card__body">
-              <h2 class="card__title">Kahlua coffee</h2>
-              <p class="card__text">Classic coffee with milk and Kahlua liqueur under a cap of frothed milk</p>
-              <p class="card__price">$7.00</p>
-            </div>
-          </li>
-
-          <li class="card">
-            <img class="card__img" src="assets/img/coffee-3.jpg" alt="Honey raf" width="310" height="310">
-            <div class="card__body">
-              <h2 class="card__title">Honey raf</h2>
-              <p class="card__text">Espresso with frothed milk, cream and aromatic honey</p>
-              <p class="card__price">$5.50</p>
-            </div>
-          </li>
-
-          <li class="card">
-            <img class="card__img" src="assets/img/coffee-4.jpg" alt="Ice cappuccino" width="310" height="310">
-            <div class="card__body">
-              <h2 class="card__title">Ice cappuccino</h2>
-              <p class="card__text">Cappuccino with soft thick foam in summer version with ice</p>
-              <p class="card__price">$5.00</p>
-            </div>
-          </li>
-
-          <li class="card card--hidden">
-            <img class="card__img" src="assets/img/coffee-5.jpg" alt="Espresso" width="310" height="310">
-            <div class="card__body">
-              <h2 class="card__title">Espresso</h2>
-              <p class="card__text">Classic black coffee</p>
-              <p class="card__price">$4.50</p>
-            </div>
-          </li>
-
-          <li class="card card--hidden">
-            <img class="card__img" src="assets/img/coffee-6.jpg" alt="Latte" width="310" height="310">
-            <div class="card__body">
-              <h2 class="card__title">Latte</h2>
-              <p class="card__text">Espresso coffee with the addition of steamed milk and dense milk foam</p>
-              <p class="card__price">$5.50</p>
-            </div>
-          </li>
-
-          <li class="card card--hidden">
-            <img class="card__img" src="assets/img/coffee-7.jpg" alt="Latte macchiato" width="310" height="310">
-            <div class="card__body">
-              <h2 class="card__title">Latte macchiato</h2>
-              <p class="card__text">Espresso with frothed milk and chocolate</p>
-              <p class="card__price">$5.50</p>
-            </div>
-          </li>
-
-          <li class="card card--hidden">
-            <img class="card__img" src="assets/img/coffee-8.jpg" alt="Coffee with cognac" width="310" height="310">
-            <div class="card__body">
-              <h2 class="card__title">Coffee with cognac</h2>
-              <p class="card__text">Fragrant black coffee with cognac and whipped cream</p>
-              <p class="card__price">$6.50</p>
-            </div>
-          </li>
-        </ul>
-
-        <button type="button" class="menu__more" aria-label="Show more">
+        <button type="button" class="menu__more" aria-label="Show more" hidden>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21.8883 13.5C21.1645 18.3113 17.013 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C16.1006 2 19.6248 4.46819 21.1679 8"/>
             <path d="M17 8H21.4C21.7314 8 22 7.73137 22 7.4V3"/>
@@ -255,6 +182,76 @@
     </div>
   </footer>
 
+  <div class="modal" id="modal" hidden>
+    <div class="modal__overlay" data-modal-close></div>
+
+    <div class="modal__window" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal__image-wrap">
+        <img class="modal__image" src="data:," alt="">
+      </div>
+
+      <div class="modal__content">
+        <div class="modal__header">
+          <h2 class="modal__title" id="modal-title">Coffee</h2>
+          <p class="modal__description"></p>
+        </div>
+
+        <div class="modal__group">
+          <h3 class="modal__group-title">Size</h3>
+          <div class="modal__options" data-modal-sizes></div>
+        </div>
+
+        <div class="modal__group">
+          <h3 class="modal__group-title">Additives</h3>
+          <div class="modal__options" data-modal-additives></div>
+        </div>
+
+        <div class="modal__total">
+          <span class="modal__total-label">Total:</span>
+          <span class="modal__total-value" data-modal-total></span>
+        </div>
+
+        <p class="modal__note">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/>
+            <path d="M8 7V11M8 5V5.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+          <span>The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.</span>
+        </p>
+
+        <button type="button" class="modal__close-btn" data-modal-close>Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+      <ul class="mobile-menu__list">
+        <li><a href="index.html#favorite" class="mobile-menu__link">Favorite coffee</a></li>
+        <li><a href="index.html#about" class="mobile-menu__link">About</a></li>
+        <li><a href="index.html#app" class="mobile-menu__link">Mobile app</a></li>
+        <li><a href="#contacts" class="mobile-menu__link">Contact us</a></li>
+      </ul>
+
+      <a href="catalog.html" class="mobile-menu__menu-link">
+        <span>Menu</span>
+        <img src="assets/icons/coffee-cup2.svg" alt="" width="40" height="40">
+      </a>
+    </nav>
+  </div>
+
   <script src="js/theme.js"></script>
+  <script src="js/burger.js"></script>
+  <template id="card-template">
+    <li class="card">
+      <img class="card__img" src="" alt="" width="310" height="310">
+      <div class="card__body">
+        <h2 class="card__title"></h2>
+        <p class="card__text"></p>
+        <p class="card__price"></p>
+      </div>
+    </li>
+  </template>
+  <script src="js/catalog.js"></script>
 </body>
 </html>

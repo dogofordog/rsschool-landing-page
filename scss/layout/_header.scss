@@ -1,4 +1,6 @@
 .header {
+  position: relative; 
+  z-index: 50; 
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -129,9 +131,15 @@
   border-radius: 2px;
   transition: transform .3s ease, opacity .3s ease;
 }
+.burger.is-open span:nth-child(1) {
+  transform: translateY(4px) rotate(45deg);
+}
 
+.burger.is-open span:nth-child(2) {
+  transform: translateY(-4px) rotate(-45deg);
+}
 
-@media (min-width: 1439px) {
+@media (min-width: 769px) {
 
   .nav {
     display: block;
